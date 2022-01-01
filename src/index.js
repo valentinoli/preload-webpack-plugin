@@ -98,6 +98,16 @@ class PreloadPlugin {
         if (attributes.as === 'font') {
           attributes.crossorigin = ''
         }
+        
+        if (attributes.as === 'image') {
+          const { imagesrcset, imagesizes } = options
+          if (imagesrcset) {
+            attributes.imagesrcset = imagesrcset
+            if (imagesizes) {
+              attributes.imagesizes = imagesizes
+            }
+          }
+        }
       }
 
       links.push({
